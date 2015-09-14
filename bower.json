@@ -1,0 +1,15 @@
+{
+  "name": "angular-examples",
+  "version": "0.0.0",
+  "authors": [
+    "yuanxin.qiu <yuanxin.qiu@smartlionapp.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

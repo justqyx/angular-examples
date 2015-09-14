@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ng-disabled | AngularJS Examples</title>
+  <script type="text/javascript" src="javascripts/angular.js"></script>
+</head>
+<body>
+
+  <div ng-app="disabledExample" ng-controller="switchController">
+    <p><button ng-disabled="buttonSwitch">点我！</button></p>
+    <label for="buttonSwitch"><input type="checkbox" ng-model="buttonSwitch">控制开关</label>
+    <p>{{ buttonSwitch }}</p>
+  </div>
+
+  <script type="text/javascript">
+    var app = angular.module('disabledExample', []);
+    app.controller('switchController', function($scope) {
+      $scope.buttonSwitch = true;
+    });
+  </script>
+
+</body>
+</html>

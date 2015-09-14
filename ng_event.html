@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ng-event | AngularJS Examples</title>
+  <script type="text/javascript" src="javascripts/angular.js"></script>
+</head>
+<body>
+
+  <div ng-app="eventExample" ng-controller="switchController">
+    <p><button ng-click="incrCount()">点我！</button></p>
+    <p>click count: {{ count }}</p>
+  </div>
+
+  <script type="text/javascript">
+    var app = angular.module('eventExample', []);
+    app.controller('switchController', function($scope) {
+      $scope.count = 0;
+      $scope.incrCount = function() {
+        $scope.count = $scope.count + 1;
+      }
+    });
+  </script>
+
+</body>
+</html>

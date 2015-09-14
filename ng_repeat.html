@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ng-app - AngularJS Examples</title>
+  <script type="text/javascript" src="javascripts/angular.js"></script>
+</head>
+<body>
+
+  <!-- ng-repeat -->
+  <div ng-app="repeat-example" ng-controller="scopeController">
+    <p><input type="text" ng-model="searchName"></p>
+    <table>
+      <tr ng-repeat="x in names | filter:searchName | orderBy: 'country'">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.country }}</td>
+      </tr>
+    </table>
+  </div>
+  <script type="text/javascript">
+    var app = angular.module('repeat-example', []);
+    app.controller('scopeController', function($scope, $http) {
+      $scope.names = [
+        { name: "name-1", country: "country-1" },
+        { name: "name-2", country: "country-2" },
+        { name: "name-3", country: "country-3" },
+        { name: "name-4", country: "country-4" },
+        { name: "name-5", country: "country-5" }
+      ];
+    });
+  </script>
+
+</body>
+</html>

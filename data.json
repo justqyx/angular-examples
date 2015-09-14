@@ -1,0 +1,7 @@
+[
+  { name: "name-1", country: "country-1" },
+  { name: "name-2", country: "country-2" },
+  { name: "name-3", country: "country-3" },
+  { name: "name-4", country: "country-4" },
+  { name: "name-5", country: "country-5" }
+]

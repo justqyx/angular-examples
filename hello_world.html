@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<!-- ng-app 是用来注明 AngularJS 脚本的作用域的 -->
+<!-- 在这里表示整个页面都是 AngularJS 的作用域 -->
+<html ng-app="">
+<head>
+  <title>Hello World - AngularJS Examples</title>
+  <script type="text/javascript" src="javascripts/angular.js"></script>
+</head>
+<body>
+  <p>Hello {{'World'}}!</p>
+
+  <p>Your name: <input type="text" ng-model="yourname" placeholder="World" /></p>
+  <hr/>
+  Hello {{ yourname || 'World' }}!
+  <p ng-bind="yourname"></p>
+</body>
+</html>
