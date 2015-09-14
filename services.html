@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Service - AngularJS Examples</title>
+  <script type="text/javascript" src="javascripts/angular.js"></script>
+</head>
+<body ng-app="app">
+
+  <div ng-controller="FCtrl">
+    <h1>{{realname}}</h1>
+    <h2>{{http}}</h2>
+    <h2>{{user.getName()}}</h2>
+    <h2>{{personname}}</h2>
+    <input type="text" ng-model="user.firstName">
+  </div>
+
+  <hr>
+
+  <div ng-controller="SCtrl">
+    <h2>{{user.firstName}}</h2>
+  </div>
+
+  <script type="text/javascript">
+    angular.module('app', [])
+      .value('realname', 'zhaoliu')
+      .constant('http', 'www.baidu.com')
+      .factory('User', function() {
+        return {
+          firstName: '源鑫',
+          lastName: '邱',
+          getName: function() { return this.lastName + this.firstName; }
+        }
+      })
+      .service('Person', function() {
+        this.firstName = "爸";
+        this.lastName = "奶";
+        this.getName = function() { return this.lastName + this.firstName; }
+      })
+      .controller('FCtrl', function($scope, realname, http, User, Person){
+        $scope.msg = "你好";
+        $scope.realname = realname;
+        $scope.http = http;
+        $scope.user = User;
+      })
+      .controller('SCtrl', function($scope, User) {
+        $scope.user = User;
+      })
+  </script>
+
+</body>
+</html>

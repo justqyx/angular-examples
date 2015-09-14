@@ -27,3 +27,11 @@ AngularJS 通过 directives 扩展了 HTML， AngularJS 需要对 HTML 进行编
 - ng-show
 - ng-hide
 - ng-click
+
+## Services
+
+- value
+- constant
+- factory
+- service
+- provider
