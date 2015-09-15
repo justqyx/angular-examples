@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directive - AngularJS Examples</title>
+  <script type="text/javascript" src="javascripts/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl">
+
+  <hello class="beautify" enter></hello>
+
+  <script type="text/javascript">
+    angular.module('app', [])
+    .directive('hello', function() {
+      return {
+        restrict: 'E',
+        replace: true,
+        template: '<div>Hello World</div>'
+      };
+    })
+    .directive('beautify', function() {
+      return {
+        restrict: 'C',
+        link: function() {
+          console.info("log from class directive");
+        }
+      }
+    })
+    .directive('enter', function() {
+      return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+          element.bind('mouseenter', function() {
+            console.dir(element);
+            console.dir(attrs);
+            scope.loadMoreData();
+          });
+        }
+      }
+    })
+    .controller('AppCtrl', function($scope) {
+      $scope.loadMoreData = function() {
+        alert('正在加载数据');
+      }
+    })
+  </script>
+
+</body>
+</html>
